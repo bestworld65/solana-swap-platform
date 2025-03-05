@@ -1,0 +1,81 @@
+{
+  "address": "2TGJnvg1fSS85j1Hoz3rjAjZvjSTHwjTBNJvmv8q5QRP",
+  "metadata": {
+    "name": "swap_contract",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "faucet",
+      "discriminator": [0, 98, 59, 30, 144, 142, 113, 12],
+      "accounts": [
+        { "name": "swap_pool", "writable": true },
+        { "name": "pool_token_account", "writable": true },
+        { "name": "user_token_account", "writable": true },
+        { "name": "owner", "writable": true, "signer": true },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [{ "name": "amount", "type": "u64" }]
+    },
+    {
+      "name": "initialize",
+      "discriminator": [175, 175, 109, 31, 13, 152, 155, 237],
+      "accounts": [
+        { "name": "swap_pool", "writable": true, "signer": true },
+        { "name": "token_a_mint" },
+        { "name": "token_b_mint" },
+        { "name": "token_a_account" },
+        { "name": "token_b_account" },
+        { "name": "owner", "writable": true, "signer": true },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "swap",
+      "discriminator": [248, 198, 158, 145, 225, 117, 135, 200],
+      "accounts": [
+        { "name": "swap_pool", "writable": true },
+        { "name": "user", "writable": true, "signer": true },
+        { "name": "user_from_account", "writable": true },
+        { "name": "user_to_account", "writable": true },
+        { "name": "pool_from_account", "writable": true },
+        { "name": "pool_to_account", "writable": true },
+        { "name": "owner", "writable": true, "signer": true },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [{ "name": "amount", "type": "u64" }]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "SwapPool",
+      "discriminator": [209, 31, 14, 115, 93, 168, 247, 50],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "token_a_mint", "type": "publicKey" },
+          { "name": "token_b_mint", "type": "publicKey" },
+          { "name": "token_a_account", "type": "publicKey" },
+          { "name": "token_b_account", "type": "publicKey" },
+          { "name": "owner", "type": "publicKey" }
+        ]
+      }
+    }
+  ]
+}
