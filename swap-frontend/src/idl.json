@@ -1,5 +1,5 @@
 {
-  "address": "2TGJnvg1fSS85j1Hoz3rjAjZvjSTHwjTBNJvmv8q5QRP",
+  "address": "4mALzdJAdAAkTsB4vsvVo1GjHpxFJEbFz5Bp8vtUStzy",
   "metadata": {
     "name": "swap_contract",
     "version": "0.1.0",
@@ -48,12 +48,12 @@
       "discriminator": [248, 198, 158, 145, 225, 117, 135, 200],
       "accounts": [
         { "name": "swap_pool", "writable": true },
-        { "name": "user", "writable": true, "signer": true },
+        { "name": "user", "signer": true },
         { "name": "user_from_account", "writable": true },
         { "name": "user_to_account", "writable": true },
         { "name": "pool_from_account", "writable": true },
         { "name": "pool_to_account", "writable": true },
-        { "name": "owner", "writable": true, "signer": true },
+        { "name": "owner", "signer": true },
         {
           "name": "token_program",
           "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"

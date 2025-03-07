@@ -1,0 +1,144 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Root variables */
+:root {
+  --primary: #00d4ff;
+  --secondary: #ff00ff;
+  --background: #0a0e1a;
+  --card-bg: rgba(20, 30, 50, 0.9);
+  --text: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 212, 255, 0.5);
+  --gradient: linear-gradient(135deg, #00d4ff, #ff00ff);
+}
+
+/* Body styling */
+body {
+  background: var(--background) url('https://www.transparenttextures.com/patterns/stardust.png');
+  color: var(--text);
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in;
+  display: flex; /* Add flex to center the container */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container */
+.app-container {
+  padding: 20px;
+  max-width: 600px;
+  width: 100%; /* Ensure it scales responsively */
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.app-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Headings */
+h1 {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h2 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+button {
+  background: var(--gradient);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: var(--text);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+button:hover::after:not(:disabled) {
+  width: 200px;
+  height: 200px;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Balance display */
+p {
+  background: rgba(0, 212, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 5px 0;
+  font-size: 1rem;
+  animation: slideIn 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  button { padding: 10px 20px; font-size: 0.9rem; }
+  p { font-size: 0.9rem; }
+}

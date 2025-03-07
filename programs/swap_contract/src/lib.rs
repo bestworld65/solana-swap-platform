@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Mint, Token, TokenAccount, Transfer};
 
-declare_id!("2TGJnvg1fSS85j1Hoz3rjAjZvjSTHwjTBNJvmv8q5QRP"); // Replace with your program ID
+declare_id!("4mALzdJAdAAkTsB4vsvVo1GjHpxFJEbFz5Bp8vtUStzy"); // Replace with your program ID
 
 #[program]
 pub mod swap_contract {
@@ -104,7 +104,7 @@ pub struct Swap<'info> {
     #[account(mut)]
     pub swap_pool: Account<'info, SwapPool>,
 
-    #[account(mut)]
+    #[account(signer)]
     pub user: Signer<'info>,
 
     #[account(mut)]
@@ -119,7 +119,7 @@ pub struct Swap<'info> {
     #[account(mut)]
     pub pool_to_account: Account<'info, TokenAccount>,
 
-    #[account(mut)]
+    #[account(signer)]
     pub owner: Signer<'info>,
 
     pub token_program: Program<'info, Token>,
