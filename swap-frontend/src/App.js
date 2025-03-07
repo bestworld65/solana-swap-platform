@@ -502,18 +502,18 @@ const App = () => {
   
       {/* Balances */}
       <h2>Balances</h2>
-      <p>User TokenA: {balances.userTokenA} tokens</p>
-      <p>User TokenB: {balances.userTokenB} tokens</p>
-      <p>Pool TokenA: {balances.poolTokenA} tokens</p>
-      <p>Pool TokenB: {balances.poolTokenB} tokens</p>
+      <p>User Token A: {balances.userTokenA} tokens</p>
+      <p>User Token B: {balances.userTokenB} tokens</p>
+      <p>Pool Token A: {balances.poolTokenA} tokens</p>
+      <p>Pool Token B: {balances.poolTokenB} tokens</p>
   
       {/* Faucet Buttons */}
       <h2>Faucet</h2>
       <button onClick={() => faucet('A')} disabled={!walletConnected}>
-        Faucet TokenA (100)
+        Faucet Token A (100)
       </button>
       <button onClick={() => faucet('B')} disabled={!walletConnected}>
-        Faucet TokenB (100)
+        Faucet Token B (100)
       </button>
   
       {/* Swap Buttons */}
